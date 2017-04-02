@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = $HOME/.local/
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = "~/.local/"
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,7 +24,8 @@ BASE_DIR = $HOME/.local/
 SECRET_KEY = 'ix#d$3+a-ir44x0@b2$p3e*b15n^^!j_7xehq=7o05qb7ge&_j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
 'timofeaa.bget.ru',
@@ -120,4 +121,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '~/tt-main/public_html/'
+
+STATIC_ROOT = 'static/'
+STATIC_URL = 'static/'
+ADMIN_MEDIA_PREFIX = 'static/admin/'
+
+STATICFILES_DIRS = [
+'$HOME/tt-main/ttmainsite/static'	
+]
